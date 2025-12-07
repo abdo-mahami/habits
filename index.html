@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+      }
+      a {
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 0.5em 0.75em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border: 1px solid #000000;
+        border-radius: 2px;
+        color: #000;
+        background: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      href="https://script.google.com/macros/s/AKfycbxGl-VXRfAGfQnGAQ212l2fQYFVrA0-ImE5gaDpTTkXU7MoMF5uAxNFiyc0qc1-LES9yQ/exec?task=Study"
+      class="study"
+      >study</a
+    >
+    <a
+      href="https://script.google.com/macros/s/AKfycbxGl-VXRfAGfQnGAQ212l2fQYFVrA0-ImE5gaDpTTkXU7MoMF5uAxNFiyc0qc1-LES9yQ/exec?task=Coding"
+      class="coding"
+      >coding</a
+    >
+    <a
+      href="https://script.google.com/macros/s/AKfycbxGl-VXRfAGfQnGAQ212l2fQYFVrA0-ImE5gaDpTTkXU7MoMF5uAxNFiyc0qc1-LES9yQ/exec?task=Reading"
+      class="reading"
+      >reading</a
+    >
+    <a
+      href="https://script.google.com/macros/s/AKfycbxGl-VXRfAGfQnGAQ212l2fQYFVrA0-ImE5gaDpTTkXU7MoMF5uAxNFiyc0qc1-LES9yQ/exec?task=Quran"
+      class="quran"
+      >quran</a
+    >
+    <a
+      href="https://script.google.com/macros/s/AKfycbxGl-VXRfAGfQnGAQ212l2fQYFVrA0-ImE5gaDpTTkXU7MoMF5uAxNFiyc0qc1-LES9yQ/exec?task=Prayers"
+      class="prayers"
+      >prayers</a
+    >
+    <a
+      href="https://script.google.com/macros/s/AKfycbxGl-VXRfAGfQnGAQ212l2fQYFVrA0-ImE5gaDpTTkXU7MoMF5uAxNFiyc0qc1-LES9yQ/exec?task=Workout"
+      class="workout"
+      >workout</a
+    >
+    <script>
+      const params = new URLSearchParams(window.location.search);
+
+      const name = params.get("name");
+
+      let btn;
+
+      switch (name) {
+        case "study":
+          btn = "study";
+          break;
+        case "coding":
+          btn = "coding";
+          break;
+        case "reading":
+          btn = "reading";
+          break;
+        case "workout":
+          btn = "workout";
+          break;
+        case "prayers":
+          btn = "prayers";
+          break;
+        case "quran":
+          btn = "quran";
+          break;
+
+        default:
+          break;
+      }
+      console.log(btn);
+      if (btn) {
+        document.querySelector(`.${btn}`).click();
+      }
+    </script>
+  </body>
+</html>
