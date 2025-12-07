@@ -8,87 +8,55 @@
       body {
         min-height: 100vh;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 1rem;
+        background-color: #232323;
       }
-      a {
-        text-decoration: none;
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        gap: 1rem;
+        width: 100%;
+        max-width: 300px;
+      }
+      input {
         font-size: 1rem;
-        padding: 0.5em 0.75em;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        border: 1px solid #000000;
-        border-radius: 2px;
-        color: #000;
-        background: #eee;
+        padding: 0.5em;
+        border: 1px solid #fff;
+        background-color: transparent;
+        color: #fff;
+        border-radius: 4px;
+        display: block;
+      }
+      ::placeholder {
+        color: #fff;
+      }
+      input#submit {
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        background-color: #fff;
+        color: #232323;
       }
     </style>
   </head>
   <body>
-    <a
-      href="https://script.google.com/macros/s/AKfycbxGl-VXRfAGfQnGAQ212l2fQYFVrA0-ImE5gaDpTTkXU7MoMF5uAxNFiyc0qc1-LES9yQ/exec?task=Study"
-      class="study"
-      >study</a
-    >
-    <a
-      href="https://script.google.com/macros/s/AKfycbxGl-VXRfAGfQnGAQ212l2fQYFVrA0-ImE5gaDpTTkXU7MoMF5uAxNFiyc0qc1-LES9yQ/exec?task=Coding"
-      class="coding"
-      >coding</a
-    >
-    <a
-      href="https://script.google.com/macros/s/AKfycbxGl-VXRfAGfQnGAQ212l2fQYFVrA0-ImE5gaDpTTkXU7MoMF5uAxNFiyc0qc1-LES9yQ/exec?task=Reading"
-      class="reading"
-      >reading</a
-    >
-    <a
-      href="https://script.google.com/macros/s/AKfycbxGl-VXRfAGfQnGAQ212l2fQYFVrA0-ImE5gaDpTTkXU7MoMF5uAxNFiyc0qc1-LES9yQ/exec?task=Quran"
-      class="quran"
-      >quran</a
-    >
-    <a
-      href="https://script.google.com/macros/s/AKfycbxGl-VXRfAGfQnGAQ212l2fQYFVrA0-ImE5gaDpTTkXU7MoMF5uAxNFiyc0qc1-LES9yQ/exec?task=Prayers"
-      class="prayers"
-      >prayers</a
-    >
-    <a
-      href="https://script.google.com/macros/s/AKfycbxGl-VXRfAGfQnGAQ212l2fQYFVrA0-ImE5gaDpTTkXU7MoMF5uAxNFiyc0qc1-LES9yQ/exec?task=Workout"
-      class="workout"
-      >workout</a
-    >
-    <script>
-      const params = new URLSearchParams(window.location.search);
+    <form action="send.php" method="post" id="habitForm">
+      <input type="number" name="study" id="study" placeholder="Study" />
+      <input type="number" name="coding" id="coding" placeholder="coding" />
+      <input type="text" name="workout" id="workout" placeholder="workout" />
+      <input type="number" name="prayers" id="prayers" placeholder="prayers" />
+      <input type="number" name="quran" id="quran" placeholder="quran" />
+      <input type="number" name="reading" id="reading" placeholder="reading" />
+      <!--  -->
+      <input type="submit" value="Submit" id="submit" />
+    </form>
 
-      const name = params.get("name");
-
-      let btn;
-
-      switch (name) {
-        case "study":
-          btn = "study";
-          break;
-        case "coding":
-          btn = "coding";
-          break;
-        case "reading":
-          btn = "reading";
-          break;
-        case "workout":
-          btn = "workout";
-          break;
-        case "prayers":
-          btn = "prayers";
-          break;
-        case "quran":
-          btn = "quran";
-          break;
-
-        default:
-          break;
-      }
-      console.log(btn);
-      if (btn) {
-        document.querySelector(`.${btn}`).click();
-      }
-    </script>
+    <p id="msg" style="color: #fff"></p>
   </body>
 </html>
+<!-- https://script.google.com/macros/s/AKfycbwQ0dlzvohZHiwAs3StK5r89GuXnYcLp9gTzscfbC_DMsY1kSzgjvIApP1162pzW0hGZg/exec -->
