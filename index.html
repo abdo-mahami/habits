@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        background-color: #232323;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        gap: 1rem;
+        width: 100%;
+        max-width: 300px;
+      }
+      input {
+        font-size: 1rem;
+        padding: 0.5em;
+        border: 1px solid #fff;
+        background-color: transparent;
+        color: #fff;
+        border-radius: 4px;
+        display: block;
+      }
+      ::placeholder {
+        color: #fff;
+      }
+      input#submit {
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        background-color: #fff;
+        color: #232323;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      action="https://script.google.com/macros/s/AKfycbwQ0dlzvohZHiwAs3StK5r89GuXnYcLp9gTzscfbC_DMsY1kSzgjvIApP1162pzW0hGZg/exec"
+      method="post"
+    >
+      <input type="number" name="study" id="study" placeholder="Study" />
+      <input type="number" name="coding" id="coding" placeholder="coding" />
+      <input type="text" name="workout" id="workout" placeholder="workout" />
+      <input type="number" name="prayers" id="prayers" placeholder="prayers" />
+      <input type="number" name="quran" id="quran" placeholder="quran" />
+      <input type="number" name="reading" id="reading" placeholder="reading" />
+      <!--  -->
+      <input type="submit" value="Submit" id="submit" />
+    </form>
+
+    <p id="msg" style="color: #fff"></p>
+  </body>
+</html>
+<!-- https://script.google.com/macros/s/AKfycbwQ0dlzvohZHiwAs3StK5r89GuXnYcLp9gTzscfbC_DMsY1kSzgjvIApP1162pzW0hGZg/exec -->
